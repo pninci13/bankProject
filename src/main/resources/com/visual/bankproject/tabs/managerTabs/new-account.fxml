@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<?import java.net.URL?>
+<BorderPane prefHeight="438.0" prefWidth="557.0" xmlns="http://javafx.com/javafx/11.0.2"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.visual.bankproject.SignupAreaController">
+
+    <center>
+        <VBox alignment="CENTER" prefHeight="480.0" prefWidth="640.0" spacing="15.0">
+            <Label text="Choose your account type" fx:id="accountTypeMessage"/>
+            <ChoiceBox id="clientOptions" fx:id="clientOptions" layoutX="123.0" layoutY="20.0" prefHeight="35.0"
+                       prefWidth="200.0" value="" onAction="#changeAccount"/>
+            <TextField maxWidth="200" prefHeight="35" promptText="User"  fx:id="usernameText"/>
+            <PasswordField maxWidth="200" prefHeight="35" promptText="Password" fx:id="passwordText"/>
+            <Button text="Create" onAction="#switchToLogin" styleClass="buttons"/>
+        </VBox>
+    </center>
+
+<!--        <stylesheets>-->
+<!--            <URL value="@../../styles/tabs.css"/>-->
+<!--        </stylesheets>-->
+</BorderPane>

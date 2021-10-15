@@ -1,0 +1,51 @@
+.buttons{
+    -fx-background-color: #67e3d9;
+    -fx-cursor: hand;
+}
+
+.tab-label { /*Label color for each one*/
+    -fx-text-fill: #67e3d9;
+    -fx-font-weight: bold;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: #67e3d9;
+}
+
+.tab-pane .tab:selected .tab-label {
+    -fx-text-fill: black;
+    -fx-font-family: Roboto;
+    -fx-font-weight: bold;
+}
+
+.tab-pane .tab {
+    -fx-background-color: #0B3142FF;
+}
+
+.tab .tab-label {
+    -fx-font-family: Roboto;
+    -fx-font-weight: bold;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: #67e3d9;
+}
+
+.tab-pane .tab:selected .tab-label {
+    -fx-text-fill: black;
+    -fx-font-family: Roboto;
+    -fx-font-weight: bold;
+}
+
+.tab-pane *.tab-header-background {
+    -fx-background-color: rgb(16, 70, 100);
+}
+
+.tabpane-bg {
+    -fx-background-color: #0B3142FF;
+}
+
+#accountTypeMessage{
+    -fx-text-fill: white;
+}
+
