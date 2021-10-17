@@ -8,8 +8,10 @@ import javafx.stage.Stage;
 import com.visual.bankproject.bankCode.Client;
 import com.visual.bankproject.bankCode.Manager;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class BankApplication extends Application {
     public static ArrayList<Client> clients = new ArrayList<>();
@@ -18,6 +20,25 @@ public class BankApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException{
+
+        File file = new File("src\\main\\java\\com\\visual\\bankproject\\bankUserInformation.txt");
+
+        Scanner scan = new Scanner(file);
+        String aux;
+
+        while (scan.hasNextLine()) {
+            aux = scan.nextLine();
+            if (aux.equals("Client")) {
+                Client client = new Client(scan.nextLine(), scan.nextLine());
+                SignupAreaController.clients.add(client);
+
+            } else if (aux.equals("Manager")) {
+                Manager manager = new Manager(scan.nextLine(), scan.nextLine());
+                SignupAreaController.managers.add(manager);
+            }
+
+        }
+
         Parent root = FXMLLoader.load(getClass().getResource("loginArea.fxml"));
         primaryStage.setTitle("Menu");
         primaryStage.setScene(new Scene(root, 600, 400));

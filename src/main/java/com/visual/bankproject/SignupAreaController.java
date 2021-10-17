@@ -66,15 +66,15 @@ public class SignupAreaController implements Initializable{
             stage.show();
 
             Alert message = new Alert (Alert.AlertType.INFORMATION);
-            message.setContentText("Successfull signup");
-            message.setTitle("Successfull Signup");
+            message.setContentText("Successful signup");
+            message.setTitle("Successful Signup");
             message.show();
 
 
         }else{
             Alert message = new Alert (Alert.AlertType.INFORMATION);
             message.setContentText("failed to signup your email");
-            message.setTitle("Unsuccessfull Signup");
+            message.setTitle("Unsuccessful Signup");
             message.show();
 
         }
@@ -99,6 +99,7 @@ public class SignupAreaController implements Initializable{
         if(myAccount.equals("Client")){
             Client client = new Client(newUsername, newPassword);
             SignupAreaController.clients.add(client);
+            ((Manager)LoginAreaController.userLogged).getClients().add(client);
 
         }else if(myAccount.equals("Manager")){
             Manager manager = new Manager(newUsername, newPassword);

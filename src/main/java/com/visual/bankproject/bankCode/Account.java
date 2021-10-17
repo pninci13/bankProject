@@ -10,7 +10,7 @@ public abstract class Account {
 
     Random random = new Random();
 
-    public Account(int accountNumber, String accountType) {
+    public Account(String accountType) {
         this.accountNumber = random.nextInt(100000)+1;
         this.accountType = accountType;
     }
@@ -33,5 +33,9 @@ public abstract class Account {
 
     public void setAccountStatement(ArrayList<Float> accountStatement) {
         this.accountStatement = accountStatement;
+    }
+
+    public String getAccountType(){
+        return accountType;
     }
 }

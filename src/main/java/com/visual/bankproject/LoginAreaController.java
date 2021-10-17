@@ -1,5 +1,6 @@
 package com.visual.bankproject;
 
+import com.visual.bankproject.bankCode.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,6 +17,8 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class LoginAreaController {
+    public static User userLogged;
+
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -38,7 +41,7 @@ public class LoginAreaController {
         if (loginValidation(usernameText.getText(), passwordText.getText()) == 0) {
             Alert message = new Alert(Alert.AlertType.INFORMATION);
             message.setContentText("Invalid Login");
-            message.setTitle("Unsuccessfull Login");
+            message.setTitle("Unsuccessful Login");
             message.show();
             passwordText.setText("");
         } else if (loginValidation(usernameText.getText(), passwordText.getText()) == 1) {
@@ -56,40 +59,25 @@ public class LoginAreaController {
         }
     }
 
-    public int loginValidation(String username, String password) throws IOException {
-        File file = new File("src\\main\\java\\com\\visual\\bankproject\\bankUserInformation.txt");
-
-        int type = 0;
-
-        if (username.isEmpty() || password.isEmpty()) {
-            return type;
+    public int loginValidation(String username, String password) {
+        for (int i = 0; i < SignupAreaController.clients.size(); i++) {
+            System.out.println("AAAAAAA");
+            userLogged = SignupAreaController.clients.get(i);
+            if (username.equals(userLogged.getEmail()) && password.equals(userLogged.getPassword())) {
+                return 1;
+            }
         }
 
-        Scanner scan = new Scanner(file);
-        String aux;
-
-
-        while (scan.hasNextLine()) {
-            aux = scan.nextLine();
-            if (aux.equals("Client")) {
-                type = 1;
-            } else if (aux.equals("Manager")) {
-                type = 2;
+        for (int i = 0; i < SignupAreaController.managers.size(); i++) {
+            System.out.println("BBBBB");
+            userLogged = SignupAreaController.managers.get(i);
+            if (username.equals(userLogged.getEmail()) && password.equals(userLogged.getPassword())) {
+                return 2;
             }
-
-            if (scan.nextLine().equals(username)) {
-                if (password.equals(scan.nextLine())) {
-                    return type;
-                } else {
-                    break;
-                }
-            }
-
-            scan.nextLine();
         }
 
-        type = 0;
-        return type;
+        return 0;
     }
-
 }
+
+

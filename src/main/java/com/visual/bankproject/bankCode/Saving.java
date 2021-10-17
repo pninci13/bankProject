@@ -1,10 +1,12 @@
 package com.visual.bankproject.bankCode;
 
-public class Saving extends Account{
+import com.visual.bankproject.bankCode.Account;
+
+public class Saving extends Account {
     private double accountInterestRate;
 
-    public Saving(int accountNumber, String accountType) {
-        super(accountNumber, "Saving");
+    public Saving() {
+        super("Saving");
     }
 
     public void deposit(float value) {

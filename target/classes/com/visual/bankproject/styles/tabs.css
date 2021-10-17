@@ -3,6 +3,11 @@
     -fx-cursor: hand;
 }
 
+.buttons:hover{
+    -fx-background-color: #479ab7;
+    -fx-cursor: hand;
+}
+
 .tab-label { /*Label color for each one*/
     -fx-text-fill: #67e3d9;
     -fx-font-weight: bold;
@@ -46,6 +51,10 @@
 }
 
 #accountTypeMessage{
+    -fx-text-fill: white;
+}
+
+.labelColor{
     -fx-text-fill: white;
 }
 

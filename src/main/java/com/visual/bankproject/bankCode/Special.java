@@ -3,8 +3,8 @@ package com.visual.bankproject.bankCode;
 public class Special extends Account{
     private float limit;
 
-    public Special(int accountNumber) {
-        super(accountNumber, "Special");
+    public Special() {
+        super("Special");
     }
 
     public void deposit(float value) {

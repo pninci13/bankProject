@@ -2,8 +2,8 @@ package com.visual.bankproject.bankCode;
 
 public class Simple extends Account{
 
-    public Simple(int accountNumber) {
-        super(accountNumber, "Simple");
+    public Simple() {
+        super("Simple");
     }
 
     public void deposit(float value) {
