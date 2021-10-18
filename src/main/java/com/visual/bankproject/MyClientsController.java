@@ -66,4 +66,23 @@ public class MyClientsController {
             e.printStackTrace();
         }
     }
+
+    public void selectedItem(){
+        TreeItem<String> item = treeView.getSelectionModel().getSelectedItem();
+        if(item != null) {
+            System.out.println(item.getValue());
+            for (int i = 0; i < ((Manager) LoginAreaController.userLogged).getClients().size() ; i++) {
+                Client client = ((Manager) LoginAreaController.userLogged).getClients().get(i);
+                for (int j = 0; j < client.getAccounts().size(); j++) {
+                    String[] number = item.getValue().split("     ");
+                    String finalNumber = String.valueOf(client.getAccounts().get(j).getAccountNumber());
+                    if(number[1].equals(finalNumber)) {
+                        for (int k = 0; k < client.getAccounts().get(j).getAccountStatement().size(); k++) {
+                            System.out.println(client.getAccounts().get(j).getAccountStatement().get(k));
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

@@ -15,6 +15,11 @@ public abstract class Account {
         this.accountType = accountType;
     }
 
+    public void deposit(float value) {
+        this.setBalance(this.getBalance() + value);
+        getAccountStatement().add(value);
+    }
+
     public int getAccountNumber() {
         return accountNumber;
     }

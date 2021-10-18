@@ -6,7 +6,29 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.geometry.Insets?>
 <BorderPane prefHeight="438.0" prefWidth="557.0" xmlns="http://javafx.com/javafx/11.0.2"
-        xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.visual.bankproject.ClientAreaController">
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.visual.bankproject.ClientWithdrawController">
 
+    <center>
+        <VBox alignment="CENTER" prefHeight="480.0" prefWidth="640.0" spacing="15.0">
+
+            <ChoiceBox maxWidth="200" prefHeight="35" fx:id="accountOptions">
+
+            </ChoiceBox>
+
+            <Label text="Type the amount you want to withdraw" styleClass="labelColor">
+                <VBox.margin>
+                    <Insets bottom="-12.0"/>
+                </VBox.margin>
+            </Label>
+            <TextField fx:id="amountValue" maxWidth="200" prefHeight="35"/>
+
+            <Button text="Withdraw" styleClass="buttons" onAction="#onWithdrawButtonClick" fx:id="withdrawButton">
+                <VBox.margin>
+                    <Insets top="20.0"/>
+                </VBox.margin>
+            </Button>
+        </VBox>
+    </center>
 </BorderPane>

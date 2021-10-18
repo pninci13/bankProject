@@ -27,9 +27,8 @@ public class ClientNewAccountController {
         createAccount("Simple");
 
         Alert message = new Alert(Alert.AlertType.INFORMATION);
-        message.setContentText("" +
-                "Successful signup");
-        message.setTitle("Successful Signup");
+        message.setContentText("" + "Account created successfully");
+        message.setTitle("Successful Account");
         message.show();
 
     }
@@ -38,8 +37,8 @@ public class ClientNewAccountController {
         createAccount("Saving");
 
         Alert message = new Alert(Alert.AlertType.INFORMATION);
-        message.setContentText("Successfull signup");
-        message.setTitle("Successfull Signup");
+        message.setContentText("Account created successfully");
+        message.setTitle("Successful Account");
         message.show();
 
     }
@@ -48,8 +47,8 @@ public class ClientNewAccountController {
         createAccount("Special");
 
         Alert message = new Alert(Alert.AlertType.INFORMATION);
-        message.setContentText("Successfull signup");
-        message.setTitle("Successfull Signup");
+        message.setContentText("Account created successfully");
+        message.setTitle("Successful Account");
         message.show();
 
     }
@@ -62,6 +61,7 @@ public class ClientNewAccountController {
         } else if (type.equals("Special")) {
             ((Client) LoginAreaController.userLogged).getAccounts().add(new Special());
         }
+        ClientDepositController.update();
     }
 
 }

@@ -61,7 +61,6 @@ public class LoginAreaController {
 
     public int loginValidation(String username, String password) {
         for (int i = 0; i < SignupAreaController.clients.size(); i++) {
-            System.out.println("AAAAAAA");
             userLogged = SignupAreaController.clients.get(i);
             if (username.equals(userLogged.getEmail()) && password.equals(userLogged.getPassword())) {
                 return 1;
@@ -69,7 +68,6 @@ public class LoginAreaController {
         }
 
         for (int i = 0; i < SignupAreaController.managers.size(); i++) {
-            System.out.println("BBBBB");
             userLogged = SignupAreaController.managers.get(i);
             if (username.equals(userLogged.getEmail()) && password.equals(userLogged.getPassword())) {
                 return 2;

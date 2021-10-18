@@ -10,14 +10,20 @@
     <center>
         <Pane>
             <children>
-                <TreeView fx:id="treeView" layoutX="89.0" layoutY="36.0" prefHeight="275.0" prefWidth="422.0">
+                <TreeView fx:id="treeView" layoutX="14.0" layoutY="24.0" onContextMenuRequested="#selectedItem"
+                          onMouseClicked="#selectedItem" prefHeight="286.0" prefWidth="259.0">
                     <root>
-                        <TreeItem expanded="true" value="MEUS CLIENTES"/>
+                        <TreeItem expanded="true" value="MY CLIENTS"/>
+                    </root>
+                </TreeView>
+                <TreeView fx:id="treeView1" layoutX="327.0" layoutY="24.0" onContextMenuRequested="#selectedItem"
+                          onMouseClicked="#selectedItem" prefHeight="286.0" prefWidth="259.0">
+                    <root>
+                        <TreeItem expanded="true" value="MY CLIENTS"/>
                     </root>
                 </TreeView>
             </children>
         </Pane>
-
     </center>
 
     <bottom>
