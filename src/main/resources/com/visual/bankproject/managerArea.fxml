@@ -12,11 +12,11 @@
     <Tab fx:id="clientsTab" closable="false" text="My clients">
         <fx:include source="tabs/managerTabs/my-clients.fxml"/>
     </Tab>
-    <Tab fx:id="accountInfoTab" closable="false" text="Account Info">
-        <fx:include source="tabs/managerTabs/account-info.fxml"/>
-    </Tab>
     <Tab fx:id="depositToClientTab" closable="false" text="Investment">
         <fx:include source="tabs/managerTabs/investment.fxml"/>
+    </Tab>
+    <Tab fx:id="editTab" closable="false" text="Edit">
+        <fx:include source="tabs/managerTabs/edit.fxml"/>
     </Tab>
     <Tab fx:id="transferTab" closable="false" text="Transfer">
         <fx:include source="tabs/managerTabs/transfer.fxml"/>

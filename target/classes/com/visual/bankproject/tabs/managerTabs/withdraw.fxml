@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.collections.FXCollections?>
-<BorderPane prefHeight="438.0" prefWidth="557.0" xmlns="http://javafx.com/javafx/11.0.2"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.visual.bankproject.ManagerAreaController">
+<BorderPane prefHeight="438.0" prefWidth="557.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.visual.bankproject.ManagerAreaController">
     <center>
         <VBox alignment="CENTER" prefHeight="480.0" prefWidth="640.0" spacing="15.0">
 
-            <Label text="Select the account"/>
+            <Label styleClass="labelColor" text="Select the account">
+            <VBox.margin>
+               <Insets bottom="-8.0" />
+            </VBox.margin></Label>
             <ChoiceBox maxWidth="200" prefHeight="35">
                 <items>
                     <FXCollections fx:factory="observableArrayList">
@@ -21,16 +20,16 @@
                 </items>
             </ChoiceBox>
 
-            <Label text="Amount to be withdrawn">
+            <Label styleClass="labelColor" text="Amount to be withdrawn">
                 <VBox.margin>
-                    <Insets bottom="-12.0"/>
+                    <Insets bottom="-8.0" />
                 </VBox.margin>
             </Label>
-            <TextField maxWidth="200" prefHeight="35"/>
+            <TextField maxWidth="200" prefHeight="35" styleClass="inputText"/>
 
-            <Button text="Transfer">
+            <Button styleClass="buttons" text="Transfer">
                 <VBox.margin>
-                    <Insets top="20.0"/>
+                    <Insets top="20.0" />
                 </VBox.margin>
             </Button>
         </VBox>

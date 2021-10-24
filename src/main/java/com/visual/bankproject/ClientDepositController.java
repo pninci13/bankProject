@@ -9,11 +9,15 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class ClientDepositController implements Initializable {
@@ -56,6 +60,7 @@ public class ClientDepositController implements Initializable {
     }
 
     public void changeAccount(ActionEvent event) {
+        System.out.println(accountOptions.getItems());
         myAccount = accountOptions.getValue();
         System.out.println(myAccount);
     }
@@ -66,13 +71,19 @@ public class ClientDepositController implements Initializable {
         for (int i = 0; i < ((Client) LoginAreaController.userLogged).getAccounts().size(); i++) {
             if (String.valueOf(((Client) LoginAreaController.userLogged).getAccounts().get(i).getAccountNumber()).equals(number[1])) {
                 Float amount = Float.parseFloat(amountValue.getText());
-//                System.out.println(amount);
-                ((Client)LoginAreaController.userLogged).getAccounts().get(i).deposit(amount);
+                ((Client) LoginAreaController.userLogged).getAccounts().get(i).deposit(amount);
                 System.out.println(((Client) LoginAreaController.userLogged).getAccounts().get(i).getBalance());
-
                 break;
             }
         }
-        System.out.println(number[1]);
+        Image image = new Image(Objects.requireNonNull(getClass().getResource("images/depositIcon.png")).toExternalForm());
+        ImageView imageView = new ImageView(image);
+        imageView.setFitWidth(64);
+        imageView.setFitHeight(64);
+        Alert message = new Alert(Alert.AlertType.INFORMATION);
+        message.setContentText("Deposit done successfully");
+        message.setTitle("Successful Deposit");
+        message.setGraphic(imageView);
+        message.showAndWait();
     }
 }

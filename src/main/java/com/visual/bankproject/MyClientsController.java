@@ -37,6 +37,12 @@ public class MyClientsController {
     @FXML
     private ListView<Account> clientList;
 
+    @FXML
+    private ListView<Float> listView;
+
+    int accountIndex;
+    int selectedClient;
+
 //    public List<Account> accountList = new ArrayList<>(Arrays.asList(new Simple(), new Simple()));
 
     public void initialize() {
@@ -67,18 +73,26 @@ public class MyClientsController {
         }
     }
 
-    public void selectedItem(){
+    public void selectedItem() {
         TreeItem<String> item = treeView.getSelectionModel().getSelectedItem();
-        if(item != null) {
-            System.out.println(item.getValue());
-            for (int i = 0; i < ((Manager) LoginAreaController.userLogged).getClients().size() ; i++) {
+        listView.getItems().clear();
+
+        if (item != null) {
+            for (int i = 0; i < ((Manager) LoginAreaController.userLogged).getClients().size(); i++) {
                 Client client = ((Manager) LoginAreaController.userLogged).getClients().get(i);
                 for (int j = 0; j < client.getAccounts().size(); j++) {
                     String[] number = item.getValue().split("     ");
                     String finalNumber = String.valueOf(client.getAccounts().get(j).getAccountNumber());
-                    if(number[1].equals(finalNumber)) {
+
+                    if (number.length == 1) {
+                        return;
+                    }
+
+                    if (number[1].equals(finalNumber)) {
+                        accountIndex = j;
+                        selectedClient = i;
                         for (int k = 0; k < client.getAccounts().get(j).getAccountStatement().size(); k++) {
-                            System.out.println(client.getAccounts().get(j).getAccountStatement().get(k));
+                            listView.getItems().add(client.getAccounts().get(accountIndex).getAccountStatement().get(k));
                         }
                     }
                 }

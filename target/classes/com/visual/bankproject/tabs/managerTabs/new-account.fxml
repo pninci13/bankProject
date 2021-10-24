@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<?import javafx.collections.FXCollections?>
-<?import java.net.URL?>
-<BorderPane prefHeight="438.0" prefWidth="557.0" xmlns="http://javafx.com/javafx/11.0.2"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.visual.bankproject.SignupAreaController">
+<BorderPane prefHeight="438.0" prefWidth="557.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.visual.bankproject.SignupAreaController">
 
     <center>
         <VBox alignment="CENTER" prefHeight="480.0" prefWidth="640.0" spacing="15.0">
-            <Label text="Choose your account type" fx:id="accountTypeMessage"/>
-            <ChoiceBox id="clientOptions" fx:id="clientOptions" layoutX="123.0" layoutY="20.0" prefHeight="35.0"
-                       prefWidth="200.0" value="" onAction="#changeAccount"/>
-            <TextField maxWidth="200" prefHeight="35" promptText="User"  fx:id="usernameText"/>
-            <PasswordField maxWidth="200" prefHeight="35" promptText="Password" fx:id="passwordText"/>
-            <Button text="Create" onAction="#switchToLogin" styleClass="buttons"/>
+            <Label fx:id="accountTypeMessage" text="Choose your account type">
+            <VBox.margin>
+               <Insets bottom="-8.0" />
+            </VBox.margin></Label>
+            <ChoiceBox id="clientOptions" fx:id="clientOptions" layoutX="123.0" layoutY="20.0" onAction="#changeAccount" prefHeight="35.0" prefWidth="200.0" value="" />
+            <Label styleClass="labelColor" text="Type New User">
+            <VBox.margin>
+               <Insets bottom="-8.0" />
+            </VBox.margin></Label>
+            <TextField fx:id="usernameText" maxWidth="200" prefHeight="35" promptText="User" styleClass="inputText"/>
+            <Label styleClass="labelColor" text="Type New Password">
+            <VBox.margin>
+               <Insets bottom="-8.0" />
+            </VBox.margin></Label>
+            <PasswordField fx:id="passwordText" maxWidth="200" prefHeight="35" promptText="Password" styleClass="inputText"/>
+            <Button onAction="#switchToLogin" styleClass="buttons" text="Create">
+            <VBox.margin>
+               <Insets top="22.0" />
+            </VBox.margin></Button>
         </VBox>
     </center>
 
-<!--        <stylesheets>-->
-<!--            <URL value="@../../styles/tabs.css"/>-->
-<!--        </stylesheets>-->
 </BorderPane>

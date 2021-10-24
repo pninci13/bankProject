@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
+
 <?import javafx.scene.layout.*?>
-<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ListView?>
 
-
-<BorderPane prefHeight="438.0" prefWidth="557.0" xmlns="http://javafx.com/javafx/11.0.2"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.visual.bankproject.ClientAreaController">
-    <bottom>
-        <VBox alignment="BOTTOM_RIGHT">
-            <Button onAction="#onClientLogoutButtonClick" text="Logout" styleClass="buttons">
-                <VBox.margin>
-                    <Insets bottom="15.0" right="15.0"/>
-                </VBox.margin>
-            </Button>
-        </VBox>
-    </bottom>
-</BorderPane>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.visual.bankproject.ClientMyStatementController">
+    <Pane prefHeight="400.0" prefWidth="600.0">
+        <VBox alignment="BOTTOM_RIGHT"/>
+        <Button layoutX="535.0" layoutY="335.0" onAction="#switchToLogin" styleClass="buttons"
+                text="Logout"/>
+        <ChoiceBox layoutX="20.0" layoutY="16.0" prefHeight="35.0" prefWidth="123.0" fx:id="clientAccount"/>
+        <ListView layoutX="165.0" layoutY="15.0" prefHeight="342.0" prefWidth="318.0" fx:id="listView"/>
+    </Pane>
+</AnchorPane>

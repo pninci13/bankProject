@@ -50,6 +50,12 @@ public class LoginAreaController {
             scene = new Scene(root, 600, 400);
             stage.setScene(scene);
             stage.show();
+
+            ClientDepositController.update();
+            ClientWithdrawController.update();
+            ClientMyStatementController.update();
+
+
         } else if (loginValidation(usernameText.getText(), passwordText.getText()) == 2) {
             root = FXMLLoader.load(getClass().getResource("managerArea.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

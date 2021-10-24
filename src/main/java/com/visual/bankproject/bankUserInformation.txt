@@ -2,11 +2,5 @@ Manager
 admin
 00
 Client
-c
-1
-Client
-qqqq
-ww
-Client
-wwww
-qq
+cleitin
+777

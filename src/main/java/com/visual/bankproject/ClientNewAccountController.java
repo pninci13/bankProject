@@ -62,6 +62,7 @@ public class ClientNewAccountController {
             ((Client) LoginAreaController.userLogged).getAccounts().add(new Special());
         }
         ClientDepositController.update();
+        ClientWithdrawController.update();
+        ClientMyStatementController.update();
     }
-
 }

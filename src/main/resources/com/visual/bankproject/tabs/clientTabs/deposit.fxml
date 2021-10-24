@@ -1,32 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<?import javafx.geometry.Insets?>
-<BorderPane prefHeight="438.0" prefWidth="557.0" xmlns="http://javafx.com/javafx/11.0.2"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.visual.bankproject.ClientDepositController">
+<BorderPane prefHeight="438.0" prefWidth="557.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.visual.bankproject.ClientDepositController">
 
     <center>
         <VBox alignment="CENTER" prefHeight="480.0" prefWidth="640.0" spacing="15.0">
 
-            <ChoiceBox maxWidth="200" prefHeight="35" fx:id="accountOptions">
+            <Label styleClass="labelColor" text="Select the account you want to deposit">
+            <VBox.margin>
+               <Insets bottom="-12.0" />
+            </VBox.margin></Label>
+
+            <ChoiceBox fx:id="accountOptions" maxWidth="200" prefHeight="35">
 
             </ChoiceBox>
 
-            <Label text="Type the amount you want to deposit" styleClass="labelColor">
+            <Label style="-fx-text-fill: white" text="Type the amount you want to deposit">
                 <VBox.margin>
-                    <Insets bottom="-12.0"/>
+                    <Insets bottom="-12.0" />
                 </VBox.margin>
             </Label>
-            <TextField fx:id="amountValue" maxWidth="200" prefHeight="35"/>
+            <TextField fx:id="amountValue" maxWidth="200" prefHeight="35" styleClass="inputText"/>
 
-            <Button text="Deposit" styleClass="buttons" onAction="#onDepositButtonClick" fx:id="depositButton">
+            <Button fx:id="depositButton" onAction="#onDepositButtonClick" styleClass="buttons" text="Deposit">
                 <VBox.margin>
-                    <Insets top="20.0"/>
+                    <Insets top="20.0" />
                 </VBox.margin>
             </Button>
         </VBox>

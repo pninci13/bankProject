@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.visual.bankproject.TransferController">
+    <children>
 
-</BorderPane>
+        <ChoiceBox layoutX="50.0" layoutY="68.0" prefHeight="35" prefWidth="200"/>
+
+
+        <ChoiceBox layoutX="353.0" layoutY="68.0" prefHeight="35" prefWidth="200"/>
+
+
+        <ChoiceBox layoutX="50.0" layoutY="146.0" prefHeight="35" prefWidth="200"/>
+
+
+        <ChoiceBox layoutX="353.0" layoutY="146.0" prefHeight="35" prefWidth="200"/>
+
+
+        <TextField layoutX="200.0" layoutY="225.0" prefHeight="35" prefWidth="200" styleClass="inputText"/>
+        <Button layoutX="274.0" layoutY="292.0" mnemonicParsing="false" styleClass="buttons" text="Transfer"/>
+        <Label layoutX="136.0" layoutY="44.0" text="From" styleClass="labelColor"/>
+        <Label layoutX="446.0" layoutY="44.0" text="To" styleClass="labelColor"/>
+        <Label layoutX="128.0" layoutY="122.0" text="Account" styleClass="labelColor"/>
+        <Label layoutX="282.0" layoutY="200.0" text="Amount" styleClass="labelColor"/>
+        <Label layoutX="431.0" layoutY="122.0" text="Account" styleClass="labelColor"/>
+    </children>
+</AnchorPane>
