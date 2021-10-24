@@ -20,6 +20,8 @@ public abstract class Account {
         getAccountStatement().add(value);
     }
 
+    public abstract void withdraw(float value);
+
     public int getAccountNumber() {
         return accountNumber;
     }

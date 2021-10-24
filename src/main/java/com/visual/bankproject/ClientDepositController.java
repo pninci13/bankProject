@@ -72,7 +72,6 @@ public class ClientDepositController implements Initializable {
             if (String.valueOf(((Client) LoginAreaController.userLogged).getAccounts().get(i).getAccountNumber()).equals(number[1])) {
                 Float amount = Float.parseFloat(amountValue.getText());
                 ((Client) LoginAreaController.userLogged).getAccounts().get(i).deposit(amount);
-                System.out.println(((Client) LoginAreaController.userLogged).getAccounts().get(i).getBalance());
                 break;
             }
         }
@@ -85,5 +84,7 @@ public class ClientDepositController implements Initializable {
         message.setTitle("Successful Deposit");
         message.setGraphic(imageView);
         message.showAndWait();
+        amountValue.setText("");
+        accountOptions.setValue("");
     }
 }

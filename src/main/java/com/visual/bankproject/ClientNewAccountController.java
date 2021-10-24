@@ -22,7 +22,6 @@ public class ClientNewAccountController {
     private Scene scene;
     private Parent root;
 
-
     public void createSimpleAccount(ActionEvent event) throws IOException {
         createAccount("Simple");
 

@@ -14,6 +14,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -31,6 +32,9 @@ public class ClientMyStatementController implements Initializable {
     @FXML
     private ListView<Float> listView;
 
+    @FXML
+    private TextField balanceText;
+
     public static ObservableList<String> information = FXCollections.observableArrayList();
 
     String myAccount;
@@ -44,7 +48,6 @@ public class ClientMyStatementController implements Initializable {
                 clientAccount.getItems().setAll(information);
             }
         });
-
         clientAccount.setOnAction(this::changeAccount);
     }
 
@@ -81,8 +84,8 @@ public class ClientMyStatementController implements Initializable {
                     for (int j = 0; j < account.getAccountStatement().size(); j++) {
                         listView.getItems().add(account.getAccountStatement().get(j));
                     }
+                    balanceText.setText(String.valueOf(account.getBalance()));
                 }
-
             }
         }
     }

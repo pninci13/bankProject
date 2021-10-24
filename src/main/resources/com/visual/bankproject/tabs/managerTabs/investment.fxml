@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.visual.bankproject.ManagerEditController">
+    <children>
 
-</BorderPane>
+        <ChoiceBox layoutX="189.0" layoutY="116.0" prefHeight="35" prefWidth="200"/>
+
+
+        <TextField layoutX="189.0" layoutY="200.0" prefHeight="35" prefWidth="200" promptText="Amount"
+                   styleClass="inputText"/>
+        <Button layoutX="265.0" layoutY="265.0" mnemonicParsing="false" styleClass="buttons" text="Apply"/>
+        <Label layoutX="238.0" layoutY="87.0" styleClass="labelColor" text="Select The Account"/>
+        <Label layoutX="242.0" layoutY="174.0" styleClass="labelColor" text="Amount To Invest"/>
+
+    </children>
+</AnchorPane>

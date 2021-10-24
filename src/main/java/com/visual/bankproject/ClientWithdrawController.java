@@ -59,40 +59,65 @@ public class ClientWithdrawController implements Initializable {
         for (int i = 0; i < loggedClient.getAccounts().size(); i++) {
             accountType = loggedClient.getAccounts().get(i).getAccountType();
             accountNumber = loggedClient.getAccounts().get(i).getAccountNumber();
-            accounts.add(accountType + "\t" + accountNumber);
+            accounts.add(accountType + "     " + accountNumber);
 //            accounts[i] = (accountType + "\t" + accountNumber);
         }
     }
 
     public void onWithdrawButtonClick(ActionEvent event) {
-        String[] number = myAccount.split("\t");
+        String[] number = myAccount.split("     ");
+        Float value = Float.parseFloat(amountValue.getText());
 
-        for (int i = 0; i < ((Client) LoginAreaController.userLogged).getAccounts().size(); i++) {
-            if (String.valueOf(((Client) LoginAreaController.userLogged).getAccounts().get(i).getAccountNumber()).equals(number[1])) {
-                Float amount = Float.parseFloat(amountValue.getText());
-//                System.out.println(amount);
-                if(((Client)LoginAreaController.userLogged).getAccounts().get(i) instanceof Special){
-                    //colocar withdraw em account
-                    ((Special) ((Client)LoginAreaController.userLogged).getAccounts().get(i)).withdraw(amount);
-                }else if(((Client)LoginAreaController.userLogged).getAccounts().get(i) instanceof Saving){
-                    ((Saving) ((Client)LoginAreaController.userLogged).getAccounts().get(i)).withdraw(amount);
-                }else{
-                    ((Simple) ((Client)LoginAreaController.userLogged).getAccounts().get(i)).withdraw(amount);
+        if(!amountValue.getText().isEmpty() && value > 0) {
+            if(value <= 110000){
+                for (int i = 0; i < ((Client) LoginAreaController.userLogged).getAccounts().size(); i++) {
+                    Account account = ((Client) LoginAreaController.userLogged).getAccounts().get(i);
+                    if (String.valueOf(account.getAccountNumber()).equals(number[1])) {
+                        account.withdraw(value);
+
+                        Image image = new Image(Objects.requireNonNull(getClass().getResource("images/money-withdrawal.png")).toExternalForm());
+                        ImageView imageView = new ImageView(image);
+                        imageView.setFitWidth(64);
+                        imageView.setFitHeight(64);
+
+                        Alert message = new Alert(Alert.AlertType.INFORMATION);
+                        message.setContentText("Withdraw done successfully");
+                        message.setTitle("Successful Withdraw");
+                        message.setGraphic(imageView);
+                        message.showAndWait();
+
+                        amountValue.setText("");
+                        accountOptions.setValue("");
+                        break;
+                    }
                 }
+            }else{
+                Image image = new Image(Objects.requireNonNull(getClass().getResource("images/alert.png")).toExternalForm());
+                ImageView imageView = new ImageView(image);
+                imageView.setFitWidth(64);
+                imageView.setFitHeight(64);
 
-                System.out.println(((Client) LoginAreaController.userLogged).getAccounts().get(i).getBalance());
-
-                break;
+                Alert message = new Alert(Alert.AlertType.INFORMATION);
+                message.setContentText("Amount is higher than your range! ");
+                message.setTitle("Unsuccessful Withdraw");
+                message.setGraphic(imageView);
+                message.showAndWait();
+                amountValue.setText("");
+                accountOptions.setValue("");
             }
+        }else{
+            Image image = new Image(Objects.requireNonNull(getClass().getResource("images/alert.png")).toExternalForm());
+            ImageView imageView = new ImageView(image);
+            imageView.setFitWidth(64);
+            imageView.setFitHeight(64);
+
+            Alert message = new Alert(Alert.AlertType.INFORMATION);
+            message.setContentText("It was not possible to withdraw your value");
+            message.setTitle("Unsuccessful Withdraw");
+            message.setGraphic(imageView);
+            message.showAndWait();
+            amountValue.setText("");
+            accountOptions.setValue("");
         }
-        Image image = new Image(Objects.requireNonNull(getClass().getResource("images/money-withdrawal.png")).toExternalForm());
-        ImageView imageView = new ImageView(image);
-        imageView.setFitWidth(64);
-        imageView.setFitHeight(64);
-        Alert message = new Alert(Alert.AlertType.INFORMATION);
-        message.setContentText("Withdraw done successfully");
-        message.setTitle("Successful Withdraw");
-        message.setGraphic(imageView);
-        message.showAndWait();
     }
 }

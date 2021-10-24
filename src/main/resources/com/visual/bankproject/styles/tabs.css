@@ -94,4 +94,14 @@
 .inputText {
     -fx-background-color: #134a64;
     -fx-text-fill: white;
+    -fx-alignment: center;
+}
+
+
+#balanceText{
+    -fx-background-color: #0B3142FF;
+    -fx-text-fill: #32fa22;
+    -fx-font-weight: bold;
+    -fx-text-alignment: center;
+    -fx-font-size: 14px;
 }
