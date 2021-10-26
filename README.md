@@ -1,104 +1,96 @@
 # Virtual Bank
 
-<img src="![image](https://user-images.githubusercontent.com/69252953/138779476-f217f5d8-3425-447c-ae4c-ed1086033206.png)
-" alt="exemplo imagem">
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/69252953/138780864-ee92b43d-ab29-4378-b41a-bae8a0fb5b20.png" width="350" title="Project Menu">
+</p>
 
-> Linha adicional de texto informativo sobre o que o projeto faz. Sua introdução deve ter cerca de 2 ou 3 linhas. Não exagere, as pessoas não vão ler.
+> Virtual bank is a project developed in Java, that simulates a real bank which involve check bank statement, make withdraws, deposits and other bank functionalties. And also has a manager view and a client view with different functions.
 
-### Ajustes e melhorias
+## 💻 Pre-Requisites:
 
-O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
+Before you run check if your machine attend the requirements:
+* Installed: `<Java / Java SDK / Scene Builder>`
+* Operational System `<Windows / Linux / Mac>`
 
-- [x] Tarefa 1
-- [x] Tarefa 2
-- [x] Tarefa 3
-- [ ] Tarefa 4
-- [ ] Tarefa 5
+## 🚀 Instaling Virtual Bank
 
-## 💻 Pré-requisitos
-
-Antes de começar, verifique se você atendeu aos seguintes requisitos:
-<!---Estes são apenas requisitos de exemplo. Adicionar, duplicar ou remover conforme necessário--->
-* Você instalou a versão mais recente de `<linguagem / dependência / requeridos>`
-* Você tem uma máquina `<Windows / Linux / Mac>`. Indique qual sistema operacional é compatível / não compatível.
-* Você leu `<guia / link / documentação_relacionada_ao_projeto>`.
-
-## 🚀 Instalando <nome_do_projeto>
-
-Para instalar o <nome_do_projeto>, siga estas etapas:
-
-Linux e macOS:
-```
-<comando_de_instalação>
-```
+To install Virtual Bank, follow the steps below:
 
 Windows:
-```
-<comando_de_instalação>
-```
+<ul>
+  <li>To use the program, you'll need to build a JavaFX with Maven project with the files in the repository</li>
+</ul>
 
-## ☕ Usando <nome_do_projeto>
+## ☕ Using Virtual Bank
+Here are some functionalities that you can use inside the program:
 
-Para usar <nome_do_projeto>, siga estas etapas:
+<ul>
+  <li>Chek your bank balance</li>
+  <li>Make money withdraws</li>
+  <li>Make deposits</li>
+  <li>Create New Users for the bank (Manager Feature)</li>
+  <li>Create New Bank account(Cliente Feature)
+        <li>Simple Account</li>
+        <li>Savings Account</li>
+        <li>Special Account</li>
+  </li>
+  <li>Change Interest rate percentage(Manager Feature)</li>
+  <li>Change account limit(Manager Feature)</li>
+</ul>
 
-```
-<exemplo_de_uso>
-```
+## 📫 Contributions to Virtual Bank
 
-Adicione comandos de execução e exemplos que você acha que os usuários acharão úteis. Fornece uma referência de opções para pontos de bônus!
+To contribute to Virtual Bank, follow the steps:
 
-## 📫 Contribuindo para <nome_do_projeto>
-<!---Se o seu README for longo ou se você tiver algum processo ou etapas específicas que deseja que os contribuidores sigam, considere a criação de um arquivo CONTRIBUTING.md separado--->
-Para contribuir com <nome_do_projeto>, siga estas etapas:
+1. Fork this repository.
+2. Make a new branch: `git checkout -b <nome_branch>`.
+3. Do the changes and commit them: `git commit -m '<mensagem_commit>'`
+4. Send them to the original branch: `git push origin <nome_do_projeto> / <local>`
+5. Create a pull request.
 
-1. Bifurque este repositório.
-2. Crie um branch: `git checkout -b <nome_branch>`.
-3. Faça suas alterações e confirme-as: `git commit -m '<mensagem_commit>'`
-4. Envie para o branch original: `git push origin <nome_do_projeto> / <local>`
-5. Crie a solicitação de pull.
-
-Como alternativa, consulte a documentação do GitHub em [como criar uma solicitação pull](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
-
-## 🤝 Colaboradores
-
-Agradecemos às seguintes pessoas que contribuíram para este projeto:
+## 🤝 Developers
 
 <table>
   <tr>
     <td align="center">
       <a href="#">
-        <img src="https://avatars3.githubusercontent.com/u/31936044" width="100px;" alt="Foto do Iuri Silva no GitHub"/><br>
+        <img src="https://user-images.githubusercontent.com/69252953/138782252-7e4198a0-393c-43b6-b1a7-10e38619b9cb.png" width="100px;" alt="Foto Pedro"/><br>
         <sub>
-          <b>Iuri Silva</b>
+          <b>Pedro Ninci</b>
         </sub>
       </a>
     </td>
     <td align="center">
       <a href="#">
-        <img src="https://s2.glbimg.com/FUcw2usZfSTL6yCCGj3L3v3SpJ8=/smart/e.glbimg.com/og/ed/f/original/2019/04/25/zuckerberg_podcast.jpg" width="100px;" alt="Foto do Mark Zuckerberg"/><br>
+        <img src="https://user-images.githubusercontent.com/69252953/138793538-7c62d00b-640e-4907-9515-dc283fe8700b.png" width="100px;" alt="Foto Victor"/><br>
         <sub>
-          <b>Mark Zuckerberg</b>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="#">
-        <img src="https://miro.medium.com/max/360/0*1SkS3mSorArvY9kS.jpg" width="100px;" alt="Foto do Steve Jobs"/><br>
-        <sub>
-          <b>Steve Jobs</b>
+          <b>Victor Takeshi</b>
         </sub>
       </a>
     </td>
   </tr>
 </table>
 
+## 👋🏻 Our social Media:
+Pedro's:
+<ul>
+  <li>Github Profile: https://github.com/pninci13</li>
+  <li>Linkedin Profile: https://www.linkedin.com/in/pedroninci/</li>
+</ul>
 
-## 😄 Seja um dos contribuidores<br>
+Victor's:
+<ul>
+  <li>Github Profile: https://github.com/Fukuloko</li>
+</ul>
 
-Quer fazer parte desse projeto? Clique [AQUI](CONTRIBUTING.md) e leia como contribuir.
 
-## 📝 Licença
+## ⚠️ Problems or Bugs<br>
 
-Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
+<ul>
+  <li>If you find any kind of problem or bug in the code/project fell free to contact Pedro or Victor to let us know.</li>
+</ul>
 
-[⬆ Voltar ao topo](#nome-do-projeto)<br>
+[⬆ Voltar ao topo](#bankProject)<br>
+
+
+
