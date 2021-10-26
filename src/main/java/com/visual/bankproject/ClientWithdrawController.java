@@ -45,9 +45,7 @@ public class ClientWithdrawController implements Initializable {
     }
 
     public void changeAccount(ActionEvent event) {
-        System.out.println(accountOptions.getItems());
         myAccount = accountOptions.getValue();
-        System.out.println(myAccount);
     }
 
     public static void update() {
@@ -73,22 +71,36 @@ public class ClientWithdrawController implements Initializable {
                 for (int i = 0; i < ((Client) LoginAreaController.userLogged).getAccounts().size(); i++) {
                     Account account = ((Client) LoginAreaController.userLogged).getAccounts().get(i);
                     if (String.valueOf(account.getAccountNumber()).equals(number[1])) {
-                        account.withdraw(value);
+                        if(account.withdraw(value)){
+                            Image image = new Image(Objects.requireNonNull(getClass().getResource("images/money-withdrawal.png")).toExternalForm());
+                            ImageView imageView = new ImageView(image);
+                            imageView.setFitWidth(64);
+                            imageView.setFitHeight(64);
 
-                        Image image = new Image(Objects.requireNonNull(getClass().getResource("images/money-withdrawal.png")).toExternalForm());
-                        ImageView imageView = new ImageView(image);
-                        imageView.setFitWidth(64);
-                        imageView.setFitHeight(64);
+                            Alert message = new Alert(Alert.AlertType.INFORMATION);
+                            message.setContentText("Withdraw done successfully");
+                            message.setTitle("Successful Withdraw");
+                            message.setGraphic(imageView);
+                            message.showAndWait();
 
-                        Alert message = new Alert(Alert.AlertType.INFORMATION);
-                        message.setContentText("Withdraw done successfully");
-                        message.setTitle("Successful Withdraw");
-                        message.setGraphic(imageView);
-                        message.showAndWait();
+                            amountValue.setText("");
+                            accountOptions.setValue("");
+                            return;
+                        }else{
+                            Image image = new Image(Objects.requireNonNull(getClass().getResource("images/alert.png")).toExternalForm());
+                            ImageView imageView = new ImageView(image);
+                            imageView.setFitWidth(64);
+                            imageView.setFitHeight(64);
 
-                        amountValue.setText("");
-                        accountOptions.setValue("");
-                        break;
+                            Alert message = new Alert(Alert.AlertType.INFORMATION);
+                            message.setContentText("It was not possible to withdraw your value");
+                            message.setTitle("Unsuccessful Withdraw");
+                            message.setGraphic(imageView);
+                            message.showAndWait();
+                            amountValue.setText("");
+                            accountOptions.setValue("");
+                            return;
+                        }
                     }
                 }
             }else{

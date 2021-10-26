@@ -62,6 +62,10 @@ public class LoginAreaController {
             scene = new Scene(root, 600, 400);
             stage.setScene(scene);
             stage.show();
+            TransferController.updateNames();
+            ManagerWithdrawController.updateNames();
+            ManagerEditController.updateNames();
+            ManagerInvestmentController.updateNames();
         }
     }
 

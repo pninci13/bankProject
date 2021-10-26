@@ -1,6 +1,3 @@
 Manager
 admin
 00
-Client
-cleitin
-777

@@ -5,33 +5,36 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="438.0" prefWidth="557.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.visual.bankproject.ManagerAreaController">
+<BorderPane prefHeight="438.0" prefWidth="557.0" xmlns="http://javafx.com/javafx/11.0.2"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.visual.bankproject.ManagerWithdrawController">
+
     <center>
         <VBox alignment="CENTER" prefHeight="480.0" prefWidth="640.0" spacing="15.0">
-
-            <Label styleClass="labelColor" text="Select the account">
-            <VBox.margin>
-               <Insets bottom="-8.0" />
-            </VBox.margin></Label>
-            <ChoiceBox maxWidth="200" prefHeight="35">
-                <items>
-                    <FXCollections fx:factory="observableArrayList">
-                    </FXCollections>
-                </items>
-            </ChoiceBox>
-
-            <Label styleClass="labelColor" text="Amount to be withdrawn">
+            <Label styleClass="labelColor" text="Choose your client">
                 <VBox.margin>
-                    <Insets bottom="-8.0" />
+                    <Insets bottom="-8.0"/>
                 </VBox.margin>
             </Label>
-            <TextField maxWidth="200" prefHeight="35" styleClass="inputText"/>
-
-            <Button styleClass="buttons" text="Withdraw">
+            <ChoiceBox layoutX="123.0" layoutY="20.0" onAction="#changeAccount" prefHeight="35.0"
+                       prefWidth="200.0" fx:id="nameOptions"/>
+            <Label styleClass="labelColor" text="Choose the account">
                 <VBox.margin>
-                    <Insets top="20.0" />
+                    <Insets bottom="-8.0"/>
+                </VBox.margin>
+            </Label>
+            <ChoiceBox layoutX="123.0" layoutY="20.0" prefHeight="35.0" prefWidth="200.0" fx:id="accountOptions"/>
+            <Label styleClass="labelColor" text="Type The Amount">
+                <VBox.margin>
+                    <Insets bottom="-8.0"/>
+                </VBox.margin>
+            </Label>
+            <TextField maxWidth="200" prefHeight="35" styleClass="inputText" fx:id="amountValue"/>
+            <Button styleClass="buttons" text="Withdraw" onAction="#onManagerWithdrawButtonClick">
+                <VBox.margin>
+                    <Insets top="22.0"/>
                 </VBox.margin>
             </Button>
         </VBox>
     </center>
+
 </BorderPane>

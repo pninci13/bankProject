@@ -4,31 +4,41 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.visual.bankproject.ManagerEditController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.visual.bankproject.ManagerEditController">
     <children>
 
-        <ChoiceBox layoutX="51.0" layoutY="135.0" prefHeight="35" prefWidth="200" />
-        <ChoiceBox layoutX="347.0" layoutY="135.0" prefHeight="35" prefWidth="200" />
+
+        <ChoiceBox fx:id="limitBox" layoutX="52.0" layoutY="130.0" prefHeight="35" prefWidth="200"/>
+        <ChoiceBox fx:id="rateBox" layoutX="347.0" layoutY="130.0" prefHeight="35" prefWidth="200"/>
+        <ChoiceBox fx:id="rateAccountBox" layoutX="347.0" layoutY="200.0" prefHeight="35" prefWidth="200"/>
 
 
-        <TextField layoutX="51.0" layoutY="183.0" prefHeight="35" prefWidth="200" promptText="New Limit" styleClass="inputText" />
-        <Button layoutX="118.0" layoutY="238.0" mnemonicParsing="false" styleClass="buttons" text="Edit Limit" />
+        <TextField fx:id="limitText" layoutX="52.0" layoutY="264.0" prefHeight="35" prefWidth="200"
+                   promptText="New Limit" styleClass="inputText"/>
+        <Button fx:id="editLimitButton" layoutX="119.0" layoutY="324.0" mnemonicParsing="false"
+                onAction="#onLimitButtonClick" styleClass="buttons" text="Edit Limit"/>
 
-        <TextField layoutX="347.0" layoutY="183.0" prefHeight="35.0" prefWidth="200.0" promptText="New Rate" styleClass="inputText" />
-        <Button layoutX="417.0" layoutY="238.0" mnemonicParsing="false" styleClass="buttons" text="Edit Rate" />
+        <TextField fx:id="rateText" layoutX="347.0" layoutY="264.0" prefHeight="35.0" prefWidth="200.0"
+                   promptText="New Rate" styleClass="inputText"/>
+        <Button fx:id="editRateButton" layoutX="415.0" layoutY="324.0" mnemonicParsing="false"
+                onAction="#onRateButtonClick" styleClass="buttons" text="Edit Rate"/>
 
-        <Label layoutX="112.0" layoutY="111.0" styleClass="labelColor" text="Select Account" />
+        <Label layoutX="121.0" layoutY="106.0" styleClass="labelColor" text="Select Client"/>
         <Label layoutX="386.0" layoutY="61.0" styleClass="labelColor" text="Edit Savings Rate">
             <font>
-                <Font size="16.0" />
+                <Font size="16.0"/>
             </font>
         </Label>
         <Label layoutX="87.0" layoutY="61.0" styleClass="labelColor" text="Edit Account Limit">
             <font>
-                <Font size="16.0" />
+                <Font size="16.0"/>
             </font>
         </Label>
-        <Label layoutX="407.0" layoutY="111.0" styleClass="labelColor" text="Select Account" />
+        <Label layoutX="408.0" layoutY="106.0" styleClass="labelColor" text="Select Client"/>
+        <ChoiceBox fx:id="limitAccountBox" layoutX="52.0" layoutY="200.0" prefHeight="35" prefWidth="200"/>
+        <Label layoutX="114.0" layoutY="175.0" styleClass="labelColor" text="Select Account"/>
+        <Label layoutX="407.0" layoutY="175.0" styleClass="labelColor" text="Select Account"/>
 
     </children>
 </AnchorPane>

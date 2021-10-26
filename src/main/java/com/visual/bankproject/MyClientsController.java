@@ -40,6 +40,9 @@ public class MyClientsController {
     @FXML
     private ListView<Float> listView;
 
+    @FXML
+    private TextField balanceShow;
+
     int accountIndex;
     int selectedClient;
 
@@ -53,7 +56,7 @@ public class MyClientsController {
             TreeItem<String> clientTreeItem = new TreeItem<>(client.getEmail());
 
             for (Account account : client.getAccounts()) {
-                TreeItem<String> accountTreeItem = new TreeItem<>(account.getAccountType() + "     " + account.getAccountNumber() + "     " + account.getBalance());
+                TreeItem<String> accountTreeItem = new TreeItem<>(account.getAccountType() + "     " + account.getAccountNumber());
                 clientTreeItem.getChildren().add(accountTreeItem);
             }
 
@@ -94,6 +97,7 @@ public class MyClientsController {
                         for (int k = 0; k < client.getAccounts().get(j).getAccountStatement().size(); k++) {
                             listView.getItems().add(client.getAccounts().get(accountIndex).getAccountStatement().get(k));
                         }
+                        balanceShow.setText(String.valueOf(client.getAccounts().get(j).getBalance()));
                     }
                 }
             }

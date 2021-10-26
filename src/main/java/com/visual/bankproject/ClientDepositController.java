@@ -71,20 +71,35 @@ public class ClientDepositController implements Initializable {
         for (int i = 0; i < ((Client) LoginAreaController.userLogged).getAccounts().size(); i++) {
             if (String.valueOf(((Client) LoginAreaController.userLogged).getAccounts().get(i).getAccountNumber()).equals(number[1])) {
                 Float amount = Float.parseFloat(amountValue.getText());
-                ((Client) LoginAreaController.userLogged).getAccounts().get(i).deposit(amount);
+                if(((Client) LoginAreaController.userLogged).getAccounts().get(i).deposit(amount)){
+                    Image image = new Image(Objects.requireNonNull(getClass().getResource("images/depositIcon.png")).toExternalForm());
+                    ImageView imageView = new ImageView(image);
+                    imageView.setFitWidth(64);
+                    imageView.setFitHeight(64);
+                    Alert message = new Alert(Alert.AlertType.INFORMATION);
+                    message.setContentText("Deposit done successfully");
+                    message.setTitle("Successful Deposit");
+                    message.setGraphic(imageView);
+                    message.showAndWait();
+                    amountValue.setText("");
+                    accountOptions.setValue("");
+                }else{
+                    Image image = new Image(Objects.requireNonNull(getClass().getResource("images/alert.png")).toExternalForm());
+                    ImageView imageView = new ImageView(image);
+                    imageView.setFitWidth(64);
+                    imageView.setFitHeight(64);
+
+                    Alert message = new Alert(Alert.AlertType.INFORMATION);
+                    message.setContentText("Deposit value is not enough! ");
+                    message.setTitle("Unsuccessful Deposit");
+                    message.setGraphic(imageView);
+                    message.showAndWait();
+                    amountValue.setText("");
+                    accountOptions.setValue("");
+                    return;
+                }
                 break;
             }
         }
-        Image image = new Image(Objects.requireNonNull(getClass().getResource("images/depositIcon.png")).toExternalForm());
-        ImageView imageView = new ImageView(image);
-        imageView.setFitWidth(64);
-        imageView.setFitHeight(64);
-        Alert message = new Alert(Alert.AlertType.INFORMATION);
-        message.setContentText("Deposit done successfully");
-        message.setTitle("Successful Deposit");
-        message.setGraphic(imageView);
-        message.showAndWait();
-        amountValue.setText("");
-        accountOptions.setValue("");
     }
 }

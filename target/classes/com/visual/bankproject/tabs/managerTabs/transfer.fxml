@@ -7,20 +7,22 @@
             xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.visual.bankproject.TransferController">
     <children>
 
-        <ChoiceBox layoutX="50.0" layoutY="68.0" prefHeight="35" prefWidth="200"/>
+        <ChoiceBox fx:id="fromBox" layoutX="50.0" layoutY="68.0" prefHeight="35" prefWidth="200"/>
 
 
-        <ChoiceBox layoutX="353.0" layoutY="68.0" prefHeight="35" prefWidth="200"/>
+        <ChoiceBox fx:id="toBox" layoutX="353.0" layoutY="68.0" prefHeight="35" prefWidth="200"/>
 
 
-        <ChoiceBox layoutX="50.0" layoutY="146.0" prefHeight="35" prefWidth="200"/>
+        <ChoiceBox fx:id="fromAccount" layoutX="50.0" layoutY="146.0" prefHeight="35" prefWidth="200"/>
 
 
-        <ChoiceBox layoutX="353.0" layoutY="146.0" prefHeight="35" prefWidth="200"/>
+        <ChoiceBox fx:id="toAccount" layoutX="353.0" layoutY="146.0" prefHeight="35" prefWidth="200"/>
 
 
-        <TextField layoutX="200.0" layoutY="225.0" prefHeight="35" prefWidth="200" styleClass="inputText"/>
-        <Button layoutX="274.0" layoutY="292.0" mnemonicParsing="false" styleClass="buttons" text="Transfer"/>
+        <TextField fx:id="amountText" layoutX="200.0" layoutY="225.0" prefHeight="35" prefWidth="200"
+                   styleClass="inputText"/>
+        <Button fx:id="transferButton" layoutX="274.0" layoutY="292.0" mnemonicParsing="false" styleClass="buttons"
+                text="Transfer" onAction="#onTransferButtonClick"/>
         <Label layoutX="136.0" layoutY="44.0" text="From" styleClass="labelColor"/>
         <Label layoutX="446.0" layoutY="44.0" text="To" styleClass="labelColor"/>
         <Label layoutX="128.0" layoutY="122.0" text="Account" styleClass="labelColor"/>
