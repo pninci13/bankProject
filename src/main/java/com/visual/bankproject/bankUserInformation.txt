@@ -1,4 +1,3 @@
-m@manager-acc.com
-q
-asdasdas@manager-acc.com
-0
+Manager
+admin
+00

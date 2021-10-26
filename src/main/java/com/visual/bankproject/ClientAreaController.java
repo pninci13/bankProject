@@ -18,9 +18,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ClientAreaController implements Initializable {
-    @FXML
-    private ChoiceBox<String> clientOptions;
+public class ClientAreaController{
+//    @FXML
+//    private ChoiceBox<String> clientOptions;
 
     private Stage stage;
     private Scene scene;
@@ -29,24 +29,32 @@ public class ClientAreaController implements Initializable {
     //lista de contas que o cliente possui
     private String[] accountOptions = {"Simple", "Special", "Saving"};
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        clientOptions.getItems().addAll(accountOptions);
-        clientOptions.setOnAction(this::changeAccount);
-    }
+//    @Override
+//    public void initialize(URL url, ResourceBundle resourceBundle) {
+//        clientOptions.getItems().addAll(accountOptions);
+//        clientOptions.setOnAction(this::changeAccount);
+//    }
 
-    public void changeAccount(ActionEvent event){
-        String myAccount = clientOptions.getValue();
-        System.out.println(myAccount);
+//    public void changeAccount(ActionEvent event){
+//        String myAccount = clientOptions.getValue();
+//        System.out.println(myAccount);
+//
+//
+////        if(myAccount.equals("Simple")){
+////            Simple account = new Simple();
+////        }
+//    }
 
-
-//        if(myAccount.equals("Simple")){
-//            Simple account = new Simple();
-//        }
-    }
-
-    public void backToLogin(ActionEvent event) throws IOException {
+    public void onClientLogoutButtonClick(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("loginArea.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 600, 400);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void onClientCreatedAnotherAccount(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("clientTabs/my-statement.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root, 600, 400);
         stage.setScene(scene);

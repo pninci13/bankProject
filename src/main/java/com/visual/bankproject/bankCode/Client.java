@@ -9,7 +9,7 @@ public class Client extends User{
         super(email, password, "client");
     }
 
-    public ArrayList<Account> getAccount(){
+    public ArrayList<Account> getAccounts(){
         return accounts;
     }
 

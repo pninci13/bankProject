@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="438.0" prefWidth="557.0" xmlns="http://javafx.com/javafx/11.0.2"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.visual.bankproject.ClientWithdrawController">
+
+    <center>
+        <VBox alignment="CENTER" prefHeight="480.0" prefWidth="640.0" spacing="15.0">
+
+            <Label styleClass="labelColor" text="Select the account you want to withdraw">
+                <VBox.margin>
+                    <Insets bottom="-12.0"/>
+                </VBox.margin>
+            </Label>
+
+            <ChoiceBox fx:id="accountOptions" maxWidth="200" prefHeight="35">
+
+            </ChoiceBox>
+
+            <Label style="-fx-text-fill: white" text="Type the amount you want to withdraw">
+                <VBox.margin>
+                    <Insets bottom="-12.0"/>
+                </VBox.margin>
+            </Label>
+            <TextField fx:id="amountValue" maxWidth="200" prefHeight="35" styleClass="inputText"/>
+
+            <Button fx:id="withdrawButton" onAction="#onWithdrawButtonClick" styleClass="buttons" text="Withdraw">
+                <VBox.margin>
+                    <Insets top="20.0"/>
+                </VBox.margin>
+            </Button>
+        </VBox>
+    </center>
+</BorderPane>

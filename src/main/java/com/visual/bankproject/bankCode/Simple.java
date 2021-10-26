@@ -2,34 +2,19 @@ package com.visual.bankproject.bankCode;
 
 public class Simple extends Account{
 
-    public Simple(int accountNumber) {
-        super(accountNumber, "Simple");
+    public Simple() {
+        super("Simple");
     }
 
-    public void deposit(float value) {
-        setBalance(getBalance() + value);
-        getAccountStatement().add(value);
-    }
-
-    public void withdraw(float value) {
+    @Override
+    public boolean withdraw(float value) {
         if(getBalance() > 0 && value <= getBalance()){
             setBalance(getBalance() - value);
             getAccountStatement().add(-value);
+            return true;
         }else{
             System.out.println("It was not possible to withdraw your value");
+            return false;
         }
     }
-
-    public void accountBalanceStatus() {
-        System.out.println("Account balance: " + getBalance());
-    }
-
-    public void accountStatement() {
-        System.out.println("   Account transactions history");
-        System.out.println("----------------------------------");
-        for(Float number : accountStatement) {
-            System.out.println(number);
-        }
-    }
-
 }

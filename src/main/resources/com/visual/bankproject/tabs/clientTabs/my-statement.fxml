@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.visual.bankproject.ClientMyStatementController">
+    <Pane prefHeight="400.0" prefWidth="600.0">
+        <VBox alignment="BOTTOM_RIGHT"/>
+        <Button layoutX="535.0" layoutY="335.0" onAction="#switchToLogin" styleClass="buttons" text="Logout"/>
+        <ChoiceBox fx:id="clientAccount" layoutX="20.0" layoutY="16.0" prefHeight="35.0" prefWidth="123.0"/>
+        <ListView fx:id="listView" layoutX="165.0" layoutY="15.0" prefHeight="342.0" prefWidth="318.0"/>
+        <Label layoutX="38.0" layoutY="80.0" styleClass="labelColor" text="Account Balance"/>
+        <TextField fx:id="balanceText" alignment="CENTER" editable="false" layoutX="2.0" layoutY="104.0"
+                   prefHeight="41.0" prefWidth="162.0"/>
+    </Pane>
+</AnchorPane>
