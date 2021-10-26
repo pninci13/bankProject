@@ -74,12 +74,14 @@ To contribute to Virtual Bank, follow the steps:
 ## 👋🏻 Our social Media:
 Pedro's:
 <ul>
+  <li>RA: 20086120</li>
   <li>Github Profile: https://github.com/pninci13</li>
   <li>Linkedin Profile: https://www.linkedin.com/in/pedroninci/</li>
 </ul>
 
 Victor's:
 <ul>
+  <li>RA: 20072385</li>
   <li>Github Profile: https://github.com/Fukuloko</li>
 </ul>
 
