@@ -25,11 +25,11 @@ Windows:
 Here are some functionalities that you can use inside the program:
 
 <ul>
-  <li>Chek your bank balance</li>
+  <li>Check your bank balance</li>
   <li>Make money withdraws</li>
   <li>Make deposits</li>
   <li>Create New Users for the bank (Manager Feature)</li>
-  <li>Create New Bank account(Cliente Feature)
+  <li>Create New Bank account(Client Feature)
         <li>Simple Account</li>
         <li>Savings Account</li>
         <li>Special Account</li>
